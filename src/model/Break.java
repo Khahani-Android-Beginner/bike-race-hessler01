@@ -1,13 +1,23 @@
 package model;
 
 public class Break {
+
+    //Ctrl + Alt + L
+
     /**
      * model
      * power    (between 0 and 10)
      */
-    public int model;
-
+    private String model;
     private int power;
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
 
     public int getPower() {
         return power;
