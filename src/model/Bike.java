@@ -11,4 +11,12 @@ public class Bike {
      * pedal( rpm )         (speed = gear size * rpm )
      * breaking ( push )    (speed -= break power * push)
      */
+    public String model;
+
+    public Gear gear;
+
+    public void pedal(int rpm){
+        //...
+    }
+
 }
