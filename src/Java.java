@@ -1,6 +1,7 @@
 import model.Bike;
 import model.Break;
 import model.Gear;
+import model.Map;
 
 public class Java {
     public static void main(String[] args) {
@@ -15,8 +16,23 @@ public class Java {
         Bike gitan = new Bike();
         gitan.model = "Gitan 2018";
         gitan.gear = shimanoG;
+        gitan.aBreak = shimano;
 
-        System.out.println(gitan.gear.getModel());
+        gitan.pedal(8);
+        System.out.println(gitan.speed);
 
+        gitan.breaking(3);
+        System.out.println(gitan.speed);
+        gitan.breaking(3);
+        System.out.println(gitan.speed);
+        gitan.breaking(3);
+        System.out.println(gitan.speed);
+        gitan.breaking(3);
+        System.out.println(gitan.speed);
+
+
+        Map map1 = new Map();
+        System.out.println(map1.getR2().maxSpeed);
+        System.out.println(map1.getR4().maxSpeed);
     }
 }

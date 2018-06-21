@@ -15,8 +15,19 @@ public class Bike {
 
     public Gear gear;
 
+    public Break aBreak;
+
+    public int speed;
+
     public void pedal(int rpm){
-        //...
+        speed = gear.getSize() * rpm;
+    }
+
+    public void breaking(int push){
+        speed -= aBreak.getPower() * push;
+
+        if (speed < 0)
+            speed = 0;
     }
 
 }
