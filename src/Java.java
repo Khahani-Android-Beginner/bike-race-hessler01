@@ -1,13 +1,10 @@
-import model.Bike;
-import model.Break;
-import model.Gear;
-import model.Map;
+import model.*;
 
 public class Java {
     public static void main(String[] args) {
         Break shimano = new Break();
         shimano.setModel("SHIMANO 2018");
-        shimano.setPower(8);
+        shimano.setPower(2);
 
         Gear shimanoG = new Gear();
         shimanoG.setModel("SH 2017");
@@ -18,21 +15,35 @@ public class Java {
         gitan.gear = shimanoG;
         gitan.aBreak = shimano;
 
-        gitan.pedal(8);
-        System.out.println(gitan.speed);
-
-        gitan.breaking(3);
-        System.out.println(gitan.speed);
-        gitan.breaking(3);
-        System.out.println(gitan.speed);
-        gitan.breaking(3);
-        System.out.println(gitan.speed);
-        gitan.breaking(3);
-        System.out.println(gitan.speed);
+        Ciclist khahani = new Ciclist();
+        khahani.setBike(gitan);
+        khahani.setName("Mr.khahani");
+        khahani.setPushPower(6);
+        khahani.setRoundPerMinutes(8);
 
 
-        Map map1 = new Map();
-        System.out.println(map1.getR2().maxSpeed);
-        System.out.println(map1.getR4().maxSpeed);
+        Map map = new Map();
+
+        //Direct1
+        khahani.pedal();
+        System.out.println(khahani.getSpeed());
+
+        // round2
+        while(khahani.getSpeed() > map.getR2().maxSpeed){
+            khahani.breaking();
+            System.out.println(khahani.getSpeed());
+        }
+
+        // direct3
+        khahani.pedal();
+        System.out.println(khahani.getSpeed());
+
+        // round 4
+        while(khahani.getSpeed() > map.getR4().maxSpeed){
+            khahani.breaking();
+            System.out.println(khahani.getSpeed());
+        }
+
+        System.out.println("Match finished");
     }
 }
